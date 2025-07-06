@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Choose Stall</title>
+</head>
+<body>
+  <h2>Select a Stall</h2>
+
+  <button onclick="selectStall('Stall 1')">Stall 1</button>
+  <button onclick="selectStall('Stall 2')">Stall 2</button>
+
+  <script>
+    function selectStall(stallName) {
+      localStorage.setItem('selectedStall', stallName);
+      window.location.href = 'menu.html';
+    }
+  </script>
+</body>
+</html>

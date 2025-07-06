@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+</head>
+<body>
+  <h2>Menu for <span id="stallName"></span></h2>
+
+  <!-- Menu Item List -->
+  <div>
+    <h3>Chole Puri - ₹50</h3>
+    <button onclick="addToCart('Chole Puri', 50)">Add</button>
+  </div>
+
+  <div>
+    <h3>Chappati - ₹30</h3>
+    <button onclick="addToCart('Chappati', 30)">Add</button>
+  </div>
+
+  <div>
+    <h3>Dosa - ₹30</h3>
+    <button onclick="addToCart('Dosa', 30)">Add</button>
+  </div>
+
+  <div>
+    <h3>Sandwich - ₹40</h3>
+    <button onclick="addToCart('Sandwich', 40)">Add</button>
+  </div>
+
+  <div>
+    <h3>Tea - ₹20</h3>
+    <button onclick="addToCart('Tea', 20)">Add</button>
+  </div>
+
+  <div>
+    <h3>Coffee - ₹15</h3>
+    <button onclick="addToCart('Coffee', 15)">Add</button>
+  </div>
+
+    <div>
+        <h3>Brinji- ₹40</h3>
+        <button onclick="addToCart('Brinji', 40)">Add</button>
+    </div>
+
+    <div>
+        <h3>Meals- ₹70</h3>
+        <button onclick="addToCart('Meals', 70)">Add</button>
+
+  <br>
+  <a href="cart.html">Go to Cart</a>
+
+  <script>
+    document.getElementById('stallName').innerText = localStorage.getItem('selectedStall') || 'Unknown Stall';
+
+    function addToCart(item, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ item, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(item + " added to cart!");
+    }
+  </script>
+</body>
+</html>
